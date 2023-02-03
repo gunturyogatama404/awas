@@ -1,13 +1,12 @@
 #!/bin/bash
-echo "SCRIPT AUTO INSTALL WINDOWS by SENO6262"
+echo "SCRIPT AUTO INSTALL WINDOWS by GUNTUR"
 echo
 echo "Pilih OS yang ingin anda install"
-echo "[1] Windows 2012(Default)"
-
+echo "[1] Windows 2019(Default)"
 read -p "Pilih [1]: " PILIH OS
 
 case "$PILIHOS" in
-	1|"") PILIHOS="https://nixpoin.sgp1.cdn.digitaloceanspaces.com/windows2012v2.gz";;
+	1|"") PILIHOS="https://nixpoin.sgp1.cdn.digitaloceanspaces.com/windows2019DO.gz";;
 	*) echo "[!] Pilihan salah"; exit;;
 esac
 
@@ -42,9 +41,8 @@ EOF
 
 cat >/tmp/dpart.bat<<EOF
 @ECHO OFF
-echo "https://shopee.co.id/seno6262" 
 echo JENDELA INI JANGAN DITUTUP
-echo SCRIPT INI AKAN MERUBAH PORT RDP MENJADI 5000, UNTUK MENYAMBUNG KE RDP GUNAKAN ALAMAT $IP4:5000
+echo SCRIPT INI AKAN MERUBAH PORT RDP MENJADI 1989, UNTUK MENYAMBUNG KE RDP GUNAKAN ALAMAT $IP4:1989
 echo KETIK YES LALU ENTER!
 
 cd.>%windir%\GetAdmin
@@ -54,7 +52,7 @@ echo CreateObject^("Shell.Application"^).ShellExecute "%~s0", "%*", "", "runas",
 del /f /q "%temp%\Admin.vbs"
 exit /b 2)
 
-set PORT=5000
+set PORT=1989
 set RULE_NAME="Open Port %PORT%"
 
 netsh advfirewall firewall show rule name=%RULE_NAME% >nul
