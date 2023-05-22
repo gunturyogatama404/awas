@@ -6,7 +6,7 @@ echo "[1] Windows 2019(Default)"
 read -p "Pilih [1]: " PILIH OS
 
 case "$PILIHOS" in
-	1|"") PILIHOS="https://nixpoin.sgp1.cdn.digitaloceanspaces.com/windows2019DO.gz";;
+	1|"") PILIHOS="https://files.nixpoin.com/windows2019.gz";;
 	*) echo "[!] Pilihan salah"; exit;;
 esac
 
